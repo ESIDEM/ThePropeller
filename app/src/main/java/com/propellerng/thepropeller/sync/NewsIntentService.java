@@ -17,6 +17,8 @@ public class NewsIntentService extends IntentService {
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         NewsSyncJobs.loadNews(getApplicationContext());
+        NewsSyncJobs.loadNewsPolitics(getApplicationContext());
+        NewsSyncJobs.loadNewsBusiness(getApplicationContext());
 
     }
 }

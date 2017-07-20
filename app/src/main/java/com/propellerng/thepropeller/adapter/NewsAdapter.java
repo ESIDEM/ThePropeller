@@ -47,7 +47,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
 
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_yaout, parent, false);
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.horizontal_item, parent, false);
 
         return new ViewHolder(view);
 
@@ -96,10 +96,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
         ViewHolder(View view) {
             super(view);
 
-                thumbnailView = (ImageView) view.findViewById(R.id.news_image_list);
-                titleView = (TextView) view.findViewById(R.id.news_title_list);
+                thumbnailView = (ImageView) view.findViewById(R.id.horizontal_news_image);
+                titleView = (TextView) view.findViewById(R.id.horizontal_news_title);
                 // description =(TextView) view.findViewById(R.id.card_subtitle);
-                pubDate = (TextView) view.findViewById(R.id.news_date);
+                pubDate = (TextView) view.findViewById(R.id.horizontal_news_date);
                 // category = (TextView) view.findViewById(R.id.cate);
             }
 

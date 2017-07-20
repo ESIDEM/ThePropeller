@@ -1,25 +1,62 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/latest_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_marginLeft="16dp"
+        android:text="LATEST"/>
+
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            android:id="@+id/recycler_view_latest"
+            android:layout_below="@+id/latest_text"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/politics_text"
+        android:layout_below="@+id/recycler_view_latest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="5dp"
+        android:text="POLITICS"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_politics"
+            android:layout_below="@+id/politics_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+    <TextView
+        android:id="@+id/business_text"
+        android:layout_below="@+id/recycler_view_politics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:text="BUSINESS"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_business"
+        android:layout_below="@+id/business_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <TextView
         android:id="@+id/error"
         android:layout_width="wrap_content"
@@ -31,3 +68,4 @@
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="0dp" />
 </RelativeLayout>
+</ScrollView>
